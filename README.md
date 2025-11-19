@@ -1,5 +1,4 @@
-# -
-数字化供应链管理系统，实现全流程可视化、数据可追溯、业务高效协同。
+
 1.1 项目背景
 随着百货中心业务规模扩大，商品品类增多（涵盖生鲜、日用百货、家电等），供应链环节（采购、库存、配送、结算）需高效协同。传统人工管理模式存在数据不实时、流程繁琐、易出错等问题，故需开发一套数字化供应链管理系统，实现全流程可视化、数据可追溯、业务高效协同。
 1.2 系统目标
@@ -15,14 +14,14 @@
 二、系统架构设计
 2.1 架构总览
 采用前后端分离架构，清晰划分职责，支持独立开发与部署：
-plaintext
+明文
 客户端（浏览器/移动端H5）
         ↓↑
-前端层（Vue3 + Element Plus）——— Nginx部署
+前端层（Vue3   Element Plus）——— Nginx部署
         ↓↑
-后端层（Spring Boot + MyBatis）——— Docker容器
+后端层（Spring Boot   MyBatis）——— Docker容器
         ↓↑
-数据层（MySQL + Redis）
+数据层（MySQL   Redis）
 2.2 各层职责
 层级	核心职责
 前端层	负责用户界面渲染、交互逻辑处理、数据可视化展示，通过 Axios 调用后端 API。
@@ -99,9 +98,9 @@ Mapper 层：PurchaseOrderMapper关联查询订单与商品明细（PurchaseOrde
 后端：
 对账逻辑：通过采购订单号关联入库单，计算实际应付款（扣除破损 / 退货金额）；
 权限控制：@PreAuthorize注解限制仅财务角色操作付款单。
-四、数据库设计
+        四、数据库设计
 4.1 核心表结构（简化版）
-表名	核心字段	说明
+表名	核心字段	说明                
 商品id，名称，类别_id，规格，价格，供应商_id， min_stock, max_stock
 供应商id、名称、联系人、qualification_status、settment_cycle、create_time
 采购订单id、供应商id、create_time、status、check_user、total_amount
